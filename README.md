@@ -9,3 +9,6 @@ All learnt from here:
 -Everything is free
 -Free ebook included at the end
 -Complete course is free
+
+#HELP
+-Start server: rails server -b $IP -p $PORT
