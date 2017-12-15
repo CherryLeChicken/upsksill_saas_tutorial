@@ -1,8 +1,11 @@
 class PagesController < ApplicationController
-    def home
-    end
+  # GET request for / 
+  def home
+    @basic_plan
+    @pro_plan
+  end
     
-    def about
-    end
+  def about
+  end
 end
 
