@@ -1,4 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action only :select_plan, :new 
+  
   # Extend default Devise gem behavior
   # Users with Pro account will save with special subscription function
   # Otherwise they will save with basic subscription functi
@@ -12,6 +14,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
           resource.save
         end
       end
+    end
+  end
+  
+  private
+  def select_plan
+    unless (params[:plan] == '1' || params[:plan] == '2')
+      flash[:notice] = "Please select a membership plan to sign up."
+      redirect_to root_url
     end
   end
 end
