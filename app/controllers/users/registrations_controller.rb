@@ -1,7 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # Extend default Devise gem behavior
   # Users with Pro account will save with special subscription function
-  # Otherwise they will save with basic subscription function
+  # Otherwise they will save with basic subscription functi
   def create
     super do |resource|
       if params[:plan]
@@ -14,3 +14,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
     end
   end
+end
